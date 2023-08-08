@@ -1,18 +1,19 @@
 -- 创建学生表
-create table t_student
+CREATE TABLE t_student
 (
-    id    int primary key auto_increment,
-    name  varchar(255) default '',
-    age   int,
-    sex   char check (sex in ('男', '女')),
-    grade varchar(255) default ''
-)engine=INNODB default charset=utf8
+    id    INT PRIMARY KEY auto_increment,
+    NAME  VARCHAR(255) DEFAULT '',
+    age   INT,
+    sex   CHAR CHECK (
+        sex IN ('男', '女')),
+    grade VARCHAR(255) DEFAULT ''
+) ENGINE = INNODB DEFAULT charset = utf8
 
 -- 创建用户表
-create table t_user
+CREATE TABLE t_user
 (
-    id       int primary key auto_increment,
-    username varchar(255) default '',
-    email    varchar(255) default '',
-    password varchar(255) default ''
-)engine=INNODB default charset=utf8
+    id       INT PRIMARY KEY auto_increment,
+    username VARCHAR(255) DEFAULT '',
+    email    VARCHAR(255) DEFAULT '',
+    PASSWORD VARCHAR(255) DEFAULT ''
+) ENGINE = INNODB DEFAULT charset = utf8

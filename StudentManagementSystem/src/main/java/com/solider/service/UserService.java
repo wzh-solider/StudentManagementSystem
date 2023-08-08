@@ -13,17 +13,16 @@ public interface UserService {
 
     /**
      * 用户登录验证
-     * @param request
-     * @param response
-     * @return
+     * @param email 邮箱
+     * @param password 密码
+     * @return 用户对象
      */
-    User checkUser(HttpServletRequest request, HttpServletResponse response);
+    User checkUser(String email, String password);
 
     /**
      * 用户注册
-     * @param request
-     * @param response
-     * @return
+     * @param user 用户数据
+     * @return boolean
      */
-    boolean signUp(HttpServletRequest request, HttpServletResponse response);
+    boolean signUp(User user);
 }

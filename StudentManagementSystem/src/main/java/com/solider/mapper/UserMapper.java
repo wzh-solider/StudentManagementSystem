@@ -25,5 +25,5 @@ public interface UserMapper {
      * 用户的注册
      */
     @Insert("insert into t_user values (null, #{username}, #{email}, #{password})")
-    int SignUpUser(@Param("username") String username, @Param("email") String email, @Param("password") String password);
+    int SignUpUser(User user);
 }
