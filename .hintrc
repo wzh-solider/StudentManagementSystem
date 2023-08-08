@@ -1,0 +1,22 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "button-type": "off",
+    "axe/aria": [
+      "default",
+      {
+        "empty-table-header": "off"
+      }
+    ],
+    "axe/forms": [
+      "default",
+      {
+        "label": "off",
+        "select-name": "off"
+      }
+    ],
+    "axe/name-role-value": "off"
+  }
+}
