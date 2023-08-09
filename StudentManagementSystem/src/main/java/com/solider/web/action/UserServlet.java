@@ -1,4 +1,4 @@
-package com.solider.web;
+package com.solider.web.action;
 
 import com.solider.bean.User;
 import com.solider.service.UserService;
@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
@@ -64,9 +65,14 @@ public class UserServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
+        // 获取会话对象
+        HttpSession session = request.getSession();
+
         // 参数验证登录
         if (userService.checkUser(email, password) != null) {
-            // 如果登录成功，重定向到成功页面
+            // 如果登录成功，将用户信息保存到session会话对象中
+            session.setAttribute("email", email);
+            // 重定向到成功页面
             response.sendRedirect(contextPath + "/signIn/successful.jsp");
         } else {
             // 登录失败，重定向到失败页面

@@ -1,4 +1,4 @@
-package com.solider.web;
+package com.solider.web.action;
 
 import com.solider.bean.Student;
 import com.solider.service.StudentService;
